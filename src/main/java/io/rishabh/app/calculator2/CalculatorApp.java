@@ -4,6 +4,7 @@ public class CalculatorApp {
     public String execute(String command) {
 
         int sum = 0;
+        int product = 1;
         String[] input = command.split(" ");
         String operation = input[0];
         String[] values = input[1].split(",");
@@ -18,6 +19,13 @@ public class CalculatorApp {
         if(operation.equals("sub")){
             sum = Integer.parseInt(values[0]) - Integer.parseInt(values[1]);
             return Integer.toString(sum);
+        }
+
+        if(operation.equals("mul")){
+            for(String value : values){
+                product = product * Integer.parseInt(value);
+            }
+            return Integer.toString(product);
         }
 
 

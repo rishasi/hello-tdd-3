@@ -29,4 +29,12 @@ public class CalculatorAppTest {
         String actual = app.execute(command);
         assertEquals(expected, actual);
     }
+
+    @Test
+    void shouldMultiplyNumbers(){
+        String command = "mul 2,3";
+        String expected = "6";
+        String actual = app.execute(command);
+        assertEquals(expected, actual);
+    }
 }
