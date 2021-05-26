@@ -3,6 +3,10 @@ package io.rishabh.app.calculator2;
 public class CalculatorApp {
     public String execute(String command) {
 
+        Add add  =  new Add();
+        Subtract sub = new Subtract();
+        Multiply mul = new Multiply();
+
         int sum = 0;
         int product = 1;
         String[] input = command.split(" ");
@@ -10,26 +14,16 @@ public class CalculatorApp {
         String[] values = input[1].split(",");
 
         if(operation.equals("add")){
-            for(String value : values){
-                sum = sum + Integer.parseInt(value);
-            }
-            return Integer.toString(sum);
+            return add.execute(values);
         }
 
         if(operation.equals("sub")){
-            sum = Integer.parseInt(values[0]) - Integer.parseInt(values[1]);
-            return Integer.toString(sum);
+            return sub.execute(values);
         }
 
         if(operation.equals("mul")){
-            for(String value : values){
-                product = product * Integer.parseInt(value);
-            }
-            return Integer.toString(product);
+            return mul.execute(values);
         }
-
-
         return "Invalid command";
-
     }
 }
