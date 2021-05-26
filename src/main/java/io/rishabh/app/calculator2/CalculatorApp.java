@@ -1,10 +1,11 @@
 package io.rishabh.app.calculator2;
 
 public class CalculatorApp {
+    private final Command[] commands;
 
-    Add add = new Add();
-    Subtract sub = new Subtract();
-    Multiply mul = new Multiply();
+    CalculatorApp(Command[] commands){
+        this.commands = commands;
+    }
 
     public String execute(String command) {
 
@@ -14,16 +15,10 @@ public class CalculatorApp {
         String operation = input[0];
         String[] values = input[1].split(",");
 
-        if(add.appliesTo(operation)){
-            return add.execute(values);
-        }
-
-        if(sub.appliesTo(operation)){
-            return sub.execute(values);
-        }
-
-        if(mul.appliesTo(operation)){
-            return mul.execute(values);
+        for(Command myCommand : commands){
+            if(myCommand.appliesTo(operation)){
+                return myCommand.execute(values);
+            }
         }
         return "Invalid command";
     }

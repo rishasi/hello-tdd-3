@@ -1,6 +1,6 @@
 package io.rishabh.app.calculator2;
 
-public class Add {
+public class Add extends Command{
     int sum = 0;
     int counter = 0;
 

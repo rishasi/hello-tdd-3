@@ -5,7 +5,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CalculatorAppTest {
 
-    CalculatorApp app = new CalculatorApp();
+    private final Command[] allCommands = {new Add(), new Subtract(), new Multiply()};
+    private final CalculatorApp app = new CalculatorApp(allCommands);
+
     @Test
     void shouldDetectInvalidCommand() {
         String command = "kill yourself";

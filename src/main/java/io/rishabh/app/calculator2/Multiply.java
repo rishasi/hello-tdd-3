@@ -1,6 +1,6 @@
 package io.rishabh.app.calculator2;
 
-public class Multiply {
+public class Multiply extends Command{
     int product = 1;
     int counter = 0;
 
