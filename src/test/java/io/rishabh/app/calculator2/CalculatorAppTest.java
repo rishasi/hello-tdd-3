@@ -37,4 +37,16 @@ public class CalculatorAppTest {
         String actual = app.execute(command);
         assertEquals(expected, actual);
     }
+
+    @Test
+    void shouldTrackNumberOfExecutionOfMultiplyCommand(){
+        app.execute("mul 2,3");
+        app.execute("mul 2,5");
+        app.execute("mul 2,6");
+
+        String command = "mul log-count";
+        String expected = "3";
+        String actual = app.execute(command);
+        assertEquals(expected, actual);
+    }
 }

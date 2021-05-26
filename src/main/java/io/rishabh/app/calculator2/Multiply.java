@@ -2,10 +2,19 @@ package io.rishabh.app.calculator2;
 
 public class Multiply {
     int product = 1;
-    public String execute(String[] numbers){
-        for(String number : numbers){
+    int counter = 0;
+
+    public String execute(String[] values){
+
+        if(values[0].startsWith("log")){
+            return Integer.toString(counter);
+        }
+
+        for(String number : values){
             product = product * Integer.parseInt(number);
         }
+        counter++;
+        System.out.println(counter);
         return Integer.toString(product);
     }
 }
