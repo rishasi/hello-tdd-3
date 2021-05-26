@@ -4,6 +4,10 @@ public class Multiply {
     int product = 1;
     int counter = 0;
 
+    public boolean appliesTo(String operation){
+        return operation.equals("mul");
+    }
+
     public String execute(String[] values){
         if(values[0].startsWith("log")){
             return Integer.toString(counter);

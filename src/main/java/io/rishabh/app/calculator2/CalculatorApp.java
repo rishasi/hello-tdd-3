@@ -18,11 +18,11 @@ public class CalculatorApp {
             return add.execute(values);
         }
 
-        if(operation.equals("sub")){
+        if(sub.appliesTo(operation)){
             return sub.execute(values);
         }
 
-        if(operation.equals("mul")){
+        if(mul.appliesTo(operation)){
             return mul.execute(values);
         }
         return "Invalid command";

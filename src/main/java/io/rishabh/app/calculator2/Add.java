@@ -5,13 +5,9 @@ public class Add {
     int counter = 0;
 
     public boolean appliesTo(String operation){
-        if (operation.equals("add")){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return operation.equals("add");
     }
+
     public String execute(String[] values){
         if(values[0].startsWith("log")){
             return Integer.toString(counter);
