@@ -1,2 +1,0 @@
-io/rishabh/app/calculator2/CalculatorApp.java
- io.rishabh.app.calculator2.CalculatorApp
