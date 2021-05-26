@@ -5,7 +5,6 @@ public class Multiply {
     int counter = 0;
 
     public String execute(String[] values){
-
         if(values[0].startsWith("log")){
             return Integer.toString(counter);
         }
@@ -14,7 +13,6 @@ public class Multiply {
             product = product * Integer.parseInt(number);
         }
         counter++;
-        System.out.println(counter);
         return Integer.toString(product);
     }
 }

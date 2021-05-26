@@ -49,4 +49,30 @@ public class CalculatorAppTest {
         String actual = app.execute(command);
         assertEquals(expected, actual);
     }
+
+    @Test
+    void shouldTrackNumberOfExecutionOfAddCommand(){
+        app.execute("add 2,3");
+        app.execute("add 2,5");
+        app.execute("add 2,6");
+        app.execute("add 2,7");
+        app.execute("add 2,9");
+
+        String command = "add log-count";
+        String expected = "5";
+        String actual = app.execute(command);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldTrackNumberOfExecutionOfSubtractCommand(){
+        app.execute("sub 2,3");
+        app.execute("sub 2,5");
+
+        String command = "sub log-count";
+        String expected = "2";
+        String actual = app.execute(command);
+        assertEquals(expected, actual);
+    }
+
 }

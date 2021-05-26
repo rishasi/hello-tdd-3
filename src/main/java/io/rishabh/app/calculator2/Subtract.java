@@ -2,8 +2,15 @@ package io.rishabh.app.calculator2;
 
 public class Subtract {
     int sum = 0;
-    public String execute(String[] numbers){
-        sum = Integer.parseInt(numbers[0]) - Integer.parseInt(numbers[1]);
+    int counter = 0;
+
+    public String execute(String[] values){
+        if(values[0].startsWith("log")){
+            return Integer.toString(counter);
+        }
+
+        sum = Integer.parseInt(values[0]) - Integer.parseInt(values[1]);
+        counter++;
         return Integer.toString(sum);
     }
 }
