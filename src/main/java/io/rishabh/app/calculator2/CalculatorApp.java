@@ -14,7 +14,7 @@ public class CalculatorApp {
         String operation = input[0];
         String[] values = input[1].split(",");
 
-        if(operation.equals("add")){
+        if(add.appliesTo(operation)){
             return add.execute(values);
         }
 
