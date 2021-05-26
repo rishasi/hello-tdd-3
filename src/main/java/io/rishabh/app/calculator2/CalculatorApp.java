@@ -15,6 +15,11 @@ public class CalculatorApp {
             return Integer.toString(sum);
         }
 
+        if(operation.equals("sub")){
+            sum = Integer.parseInt(values[0]) - Integer.parseInt(values[1]);
+            return Integer.toString(sum);
+        }
+
 
         return "Invalid command";
 

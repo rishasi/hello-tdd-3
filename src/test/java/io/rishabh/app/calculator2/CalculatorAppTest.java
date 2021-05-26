@@ -21,4 +21,12 @@ public class CalculatorAppTest {
         String actual = app.execute(command);
         assertEquals(expected, actual);
     }
+
+    @Test
+    void shouldSubtractTwoNumbers(){
+        String command = "sub 2,3";
+        String expected = "-1";
+        String actual = app.execute(command);
+        assertEquals(expected, actual);
+    }
 }
