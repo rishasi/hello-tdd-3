@@ -84,8 +84,7 @@ public class CalculatorAppTest {
 
     @Test
     void shouldSupportAnyNumOfCommands(){
-        int numOfCommands = 8;
-        for (int i = 0; i < numOfCommands; i++){
+        for (int i = 0; i < 20; i++){
             app.addCommand(new Add());
         }
         String command = "add 0,1,2,3";
