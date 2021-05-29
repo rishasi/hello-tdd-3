@@ -1,23 +1,23 @@
 package io.rishabh.app.calculator2;
 
 public class CalculatorApp {
-    private final Command[] commands;
+    private int numOfCommands = 0;
+    private Command[] commands = new Command[10];
 
-    CalculatorApp(Command[] commands){
-        this.commands = commands;
+    public void addCommand(Command command){
+        // what now ?
+        commands[numOfCommands] = command;
+        numOfCommands++;
     }
-
     public String execute(String command) {
 
-        int sum = 0;
-        int product = 1;
         String[] input = command.split(" ");
         String operation = input[0];
         String[] values = input[1].split(",");
 
-        for(Command myCommand : commands){
-            if(myCommand.appliesTo(operation)){
-                return myCommand.execute(values);
+        for(int i = 0; i < numOfCommands; i++){
+            if(commands[i].appliesTo(operation)){
+                return commands[i].execute(values);
             }
         }
         return "Invalid command";

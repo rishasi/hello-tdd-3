@@ -4,9 +4,14 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CalculatorAppTest {
+    private CalculatorApp app;
 
-    private final Command[] allCommands = {new Add(), new Subtract(), new Multiply()};
-    private final CalculatorApp app = new CalculatorApp(allCommands);
+    public CalculatorAppTest(){
+        app = new CalculatorApp();
+        app.addCommand(new Add());
+        app.addCommand(new Subtract());
+        app.addCommand(new Multiply());
+    }
 
     @Test
     void shouldDetectInvalidCommand() {
@@ -76,5 +81,4 @@ public class CalculatorAppTest {
         String actual = app.execute(command);
         assertEquals(expected, actual);
     }
-
 }
