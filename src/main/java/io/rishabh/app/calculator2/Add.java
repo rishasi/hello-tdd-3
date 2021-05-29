@@ -9,6 +9,7 @@ public class Add extends Command{
 
     public String execute(String[] values){
         int sum = 0;
+
         if(values[0].startsWith("log")){
             return Integer.toString(counter);
         }

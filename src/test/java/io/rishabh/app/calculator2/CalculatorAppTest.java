@@ -86,10 +86,11 @@ public class CalculatorAppTest {
     void shouldSupportAnyNumOfCommands(){
         int numOfCommands = 8;
         for (int i = 0; i < numOfCommands; i++){
-            String command = "add 0,1,2,3";
-            String expected = "6";
-            String actual = app.execute(command);
-            assertEquals(expected, actual);
+            app.addCommand(new Add());
         }
+        String command = "add 0,1,2,3";
+        String expected = "6";
+        String actual = app.execute(command);
+        assertEquals(expected, actual);
     }
 }

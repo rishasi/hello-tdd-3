@@ -9,6 +9,7 @@ public class Multiply extends Command{
 
     public String execute(String[] values){
         int product = 1;
+
         if(values[0].startsWith("log")){
             return Integer.toString(counter);
         }
