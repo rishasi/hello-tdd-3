@@ -23,8 +23,8 @@ public class CalculatorAppTest {
 
     @Test
     void shouldAddNumbers(){
-        String command = "add 2,3,4,5";
-        String expected = "14";
+        String command = "add 0,1,2,3";
+        String expected = "6";
         String actual = app.execute(command);
         assertEquals(expected, actual);
     }
@@ -80,5 +80,16 @@ public class CalculatorAppTest {
         String expected = "2";
         String actual = app.execute(command);
         assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldSupportAnyNumOfCommands(){
+        int numOfCommands = 8;
+        for (int i = 0; i < numOfCommands; i++){
+            String command = "add 0,1,2,3";
+            String expected = "6";
+            String actual = app.execute(command);
+            assertEquals(expected, actual);
+        }
     }
 }

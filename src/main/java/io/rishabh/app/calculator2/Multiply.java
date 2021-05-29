@@ -1,7 +1,6 @@
 package io.rishabh.app.calculator2;
 
 public class Multiply extends Command{
-    int product = 1;
     int counter = 0;
 
     public boolean appliesTo(String operation){
@@ -9,6 +8,7 @@ public class Multiply extends Command{
     }
 
     public String execute(String[] values){
+        int product = 1;
         if(values[0].startsWith("log")){
             return Integer.toString(counter);
         }
