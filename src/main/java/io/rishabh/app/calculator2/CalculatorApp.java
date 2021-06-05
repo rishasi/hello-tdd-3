@@ -10,7 +10,6 @@ public class CalculatorApp {
     }
 
     public String execute(String command) {
-
         String[] input = command.split(" ");
         String operation = input[0];
         String[] values = input[1].split(",");
